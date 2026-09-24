@@ -1,70 +1,73 @@
-<!-- Add your social image here, e.g.: ![ui-ux-designer](assets/social-preview.png) -->
+![ui-ux-designer](assets/social-preview.png)
 
 # ui-ux-designer
 
-A **portable senior UI/UX designer Agent Skill**. Give it a brief, a backlog, a single
-module, or a redesign request, and it produces one self-contained **Interface & Journey
-Guide** in Markdown — design system, three-layer tokens, screen-by-screen specs, the nine
-states, motion, UX copy, data-viz, and WCAG 2.1 AA accessibility.
+Un **Agent Skill portable de designer UI/UX senior**. Donne-lui un brief, un backlog, un
+module isolé ou une demande de refonte, et il produit un unique **Interface & Journey
+Guide** en Markdown — design system, tokens sur trois niveaux, specs écran par écran, les
+neuf états, motion, UX copy, data-viz et accessibilité WCAG 2.1 AA.
 
-It **describes and prescribes** interfaces with developer-grade precision. It **never writes
-code and never chooses the tech stack**, and it **derives the art direction from your subject**
-(or from a palette you give it) instead of defaulting to a template.
+Il **décrit et prescrit** les interfaces avec une précision de niveau développeur. Il **n'écrit
+jamais de code et ne choisit jamais la stack technique**, et il **dérive la direction artistique
+de ton sujet** (ou d'une palette que tu lui donnes) au lieu de retomber sur un template.
 
-Works with **Claude** (Skills, Claude Code, Desktop, Cowork), **OpenAI Codex** and other
-`AGENTS.md`-aware agents (Cursor, Windsurf, Aider…), and **any tool that takes a Markdown
-system prompt** via the flattened bundle.
-
----
-
-## What it does
-
-- Derives a **Design System Blueprint** from the product's sector and subject (a Reasoning
-  Engine, not a fixed palette): pattern → style → color mood → typography → effects →
-  conditional rules → anti-patterns to avoid → the one signature element.
-- Specifies **three-layer design tokens** (primitive → semantic → component), color (with
-  harmony schemes, 60-30-10, oklch ramps, dark mode), a derived type scale, spacing/grid,
-  a single depth strategy + surface elevation, and system motion.
-- Prescribes from a **pattern library** (input, navigation, content/data, onboarding, social)
-  and specifies **every state** (default, hover, focus, active, disabled, loading, empty,
-  error, success) for every component and screen — mobile-first.
-- Bakes in **accessibility** (WCAG 2.1 AA), **UX writing**, **data-viz**, an **audit mode**
-  for redesigns, and a **pre-delivery QA** pass (priority framework + self-critique).
-
-## What it will not do
-
-- Write code (HTML/CSS/React/anything) — it produces a spec, not an implementation.
-- Choose the tech stack or framework.
-- Run user research or usability testing, or produce PM/strategy artifacts — it *consumes*
-  those, it doesn't fake them.
+Fonctionne avec **Claude** (Skills, Claude Code, Desktop, Cowork), **OpenAI Codex** et les
+autres agents compatibles `AGENTS.md` (Cursor, Windsurf, Aider…), et **tout outil qui accepte
+un system prompt Markdown** via le bundle aplati.
 
 ---
 
-## Install / use
+## Ce qu'il fait
 
-### Claude — as a Skill (claude.ai, Desktop, Cowork)
-Download [`dist/ui-ux-designer.skill`](dist/ui-ux-designer.skill) and upload it in
-**Settings → Capabilities → Skills** (or wherever your surface imports skills). It triggers
-automatically on UI/UX design requests.
+- Dérive un **Design System Blueprint** à partir du secteur et du sujet du produit (un moteur
+  de raisonnement, pas une palette figée) : pattern → style → ambiance couleur → typographie
+  → effets → règles conditionnelles → anti-patterns à éviter → l'unique élément signature.
+- Spécifie des **design tokens sur trois niveaux** (primitive → semantic → component), la
+  couleur (schémas d'harmonie, 60-30-10, rampes oklch, dark mode), une échelle typographique
+  dérivée, l'espacement/la grille, une stratégie de profondeur unique + l'élévation de surfaces,
+  et une motion systémique.
+- Prescrit depuis une **bibliothèque de patterns** (input, navigation, contenu/données,
+  onboarding, social) et spécifie **chaque état** (default, hover, focus, active, disabled,
+  loading, empty, error, success) pour chaque composant et chaque écran — mobile-first.
+- Intègre l'**accessibilité** (WCAG 2.1 AA), l'**UX writing**, la **data-viz**, un **mode audit**
+  pour les refontes et une **QA de pré-livraison** (priority framework + auto-critique).
 
-### Claude Code — as a plugin
-This repo is a Claude Code plugin marketplace. Add it, then install the plugin:
+## Ce qu'il ne fait pas
+
+- Écrire du code (HTML/CSS/React/quoi que ce soit) — il produit une spec, pas une
+  implémentation.
+- Choisir la stack technique ou le framework.
+- Mener de la recherche utilisateur ou des tests d'utilisabilité, ni produire des livrables
+  PM/stratégie — il *consomme* ces sorties, il ne les invente pas.
+
+---
+
+## Installation / utilisation
+
+### Claude — en tant que Skill (claude.ai, Desktop, Cowork)
+Télécharge [`dist/ui-ux-designer.skill`](dist/ui-ux-designer.skill) et importe-le dans
+**Settings → Capabilities → Skills** (ou là où ta surface importe les skills). Il se déclenche
+automatiquement sur les demandes de design UI/UX.
+
+### Claude Code — en tant que plugin
+Ce repo est une marketplace de plugin Claude Code. Ajoute-la, puis installe le plugin :
 ```
 /plugin marketplace add dr-spook/ui-ux-designer-skill
 /plugin install ui-ux-designer
 ```
-Or drop [`skills/ui-ux-designer/`](skills/ui-ux-designer/) into your project's `.claude/skills/`.
+Ou dépose [`skills/ui-ux-designer/`](skills/ui-ux-designer/) dans le `.claude/skills/` de ton projet.
 
-### OpenAI Codex / Cursor / Windsurf / other AGENTS.md agents
-Clone or vendor the repo; the agent reads [`AGENTS.md`](AGENTS.md), which points it at
-[`skills/ui-ux-designer/SKILL.md`](skills/ui-ux-designer/SKILL.md) and its `references/`.
+### OpenAI Codex / Cursor / Windsurf / autres agents AGENTS.md
+Clone ou intègre le repo ; l'agent lit [`AGENTS.md`](AGENTS.md), qui le pointe vers
+[`skills/ui-ux-designer/SKILL.md`](skills/ui-ux-designer/SKILL.md) et ses `references/`.
 
-### Any other LLM / custom GPT / plain system prompt
-Paste [`dist/ui-ux-designer.bundle.md`](dist/ui-ux-designer.bundle.md) — the whole skill
-(SKILL.md + every reference) flattened into one file — as the system/instructions prompt.
+### Tout autre LLM / GPT perso / system prompt brut
+Colle [`dist/ui-ux-designer.bundle.md`](dist/ui-ux-designer.bundle.md) — le skill entier
+(SKILL.md + toutes les références) aplati en un seul fichier — comme prompt système / instructions.
 
-> **Progressive disclosure:** native Claude loads each `references/*.md` only when the task
-> needs it. The bundle trades that for a single long prompt so non-Claude tools work too.
+> **Divulgation progressive :** Claude en natif ne charge chaque `references/*.md` que quand
+> la tâche en a besoin. Le bundle échange ça contre un seul long prompt, pour que les outils
+> non-Claude fonctionnent aussi.
 
 ---
 
@@ -72,29 +75,29 @@ Paste [`dist/ui-ux-designer.bundle.md`](dist/ui-ux-designer.bundle.md) — the w
 
 ```
 ui-ux-designer-skill/
-├─ skills/ui-ux-designer/       # the canonical Agent Skill (edit here)
-│  ├─ SKILL.md                  # thin core: identity, workflow, constraints, output
-│  ├─ references/               # loaded on demand (reasoning-engine, visual-system,
+├─ skills/ui-ux-designer/       # le Agent Skill canonique (édite ici)
+│  ├─ SKILL.md                  # noyau mince : identité, workflow, contraintes, sortie
+│  ├─ references/               # chargées à la demande (reasoning-engine, visual-system,
 │  │                            #   pattern-library, components/states, accessibility,
 │  │                            #   copy-and-content, data-viz, delivery-and-qa, audit-mode)
 │  └─ CHANGELOG.md
 ├─ dist/
-│  ├─ ui-ux-designer.skill      # one-click Claude import (zip)
-│  └─ ui-ux-designer.bundle.md  # flattened single-file build for any agent
-├─ .claude-plugin/              # Claude Code plugin + marketplace manifests
-├─ AGENTS.md · CLAUDE.md        # cross-agent entrypoints
+│  ├─ ui-ux-designer.skill      # import 1 clic pour Claude (zip)
+│  └─ ui-ux-designer.bundle.md  # build aplati en un seul fichier, pour n'importe quel agent
+├─ .claude-plugin/              # manifestes plugin + marketplace Claude Code
+├─ AGENTS.md · CLAUDE.md        # points d'entrée cross-agent
 └─ LICENSE
 ```
 
-The skill in `skills/ui-ux-designer/` is the source of truth. `dist/ui-ux-designer.bundle.md`
-is generated from it — edit the skill, then regenerate the bundle.
+Le skill dans `skills/ui-ux-designer/` est la source de vérité. `dist/ui-ux-designer.bundle.md`
+en est généré — édite le skill, puis régénère le bundle.
 
 ## Versioning
 
-Current: **v1.2.0**. See [`skills/ui-ux-designer/CHANGELOG.md`](skills/ui-ux-designer/CHANGELOG.md)
-for the full history (built with skill-hunter's CREATE → IMPROVE workflow; each release
-records a gap analysis and a clear diff).
+Actuelle : **v1.2.0**. Voir [`skills/ui-ux-designer/CHANGELOG.md`](skills/ui-ux-designer/CHANGELOG.md)
+pour l'historique complet (construit avec le workflow CREATE → IMPROVE de skill-hunter ; chaque
+version consigne une analyse d'écart et un diff clair).
 
-## License
+## Licence
 
 [MIT](LICENSE) © 2026 Boubacar Sidiki ZANGO ([@dr-spook](https://github.com/dr-spook)).
