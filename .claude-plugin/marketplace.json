@@ -1,0 +1,35 @@
+{
+  "name": "ui-ux-designer-skill",
+  "id": "ui-ux-designer-skill",
+  "owner": {
+    "name": "dr-spook",
+    "url": "https://github.com/dr-spook"
+  },
+  "metadata": {
+    "description": "A portable senior UI/UX designer Agent Skill: brief in, a justified, accessible, mobile-first Interface & Journey Guide out. No code, no stack lock-in.",
+    "version": "1.2.0"
+  },
+  "plugins": [
+    {
+      "name": "ui-ux-designer",
+      "source": "./",
+      "description": "Senior UI/UX designer skill. Turns a brief, backlog, module or redesign request into a justified, accessible, mobile-first Interface & Journey Guide (design system, three-layer tokens, screen-by-screen specs, nine states, motion, UX copy, data-viz, WCAG 2.1 AA). Derives the art direction from the subject or a palette you provide; never writes code and never chooses the tech stack.",
+      "version": "1.2.0",
+      "author": {
+        "name": "Boubacar Sidiki ZANGO"
+      },
+      "keywords": [
+        "ui",
+        "ux",
+        "design",
+        "design-system",
+        "design-tokens",
+        "accessibility",
+        "typography",
+        "motion"
+      ],
+      "category": "design",
+      "strict": false
+    }
+  ]
+}
